@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: portal-api-lb
+  namespace: instance-1
+spec:
+  rules:
+    - host: ins-1.localhost
+      http:
+        paths:
+          - backend:
+              serviceName: portal-api
+              servicePort: 80
+status:
+  loadBalancer:
+    ingress:
+      - {}
